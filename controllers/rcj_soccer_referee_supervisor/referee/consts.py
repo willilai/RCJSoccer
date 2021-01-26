@@ -33,12 +33,12 @@ NEUTRAL_SPOTS = {
 
 
 ROBOT_INITIAL_TRANSLATION = {
-    "B1": [0.3,  0.03817, 0.3],
-    "B2": [0.3,  0.03817, -0.3],
+    "B1": [1,  0.03817, 0.3],
+    "B2": [1,  0.03817, -0.3],
     "B3": [0.3,  0.03817, 0],
-    "Y1": [-0.3, 0.03817, -0.3],
-    "Y2": [-0.3, 0.03817, 0.3],
-    "Y3": [-0.3, 0.03817, 0],
+    "Y1": [1, 0.03817, -0.3],
+    "Y2": [1, 0.03817, 0.3],
+    "Y3": [1, 0.03817, 0],
 }
 
 ROBOT_INITIAL_ROTATION = {
@@ -50,8 +50,8 @@ ROBOT_INITIAL_ROTATION = {
     "Y3": [0, 1, 0, 1.57],
 }
 
-BLUE_KICKOFF_TRANSLATION = [0.1, 0.03817, 0]
-YELLOW_KICKOFF_TRANSLATION = [-0.1, 0.03817, 0]
+BLUE_KICKOFF_TRANSLATION = [1, 0.03817, 0]
+YELLOW_KICKOFF_TRANSLATION = [1, 0.03817, 0]
 
 KICKOFF_TRANSLATION = {
     Team.BLUE.value: BLUE_KICKOFF_TRANSLATION,

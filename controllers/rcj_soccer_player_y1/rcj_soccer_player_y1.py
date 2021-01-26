@@ -1,3 +1,4 @@
+team = 'YELLOW'
 # rcj_soccer_player controller - ROBOT Y1
 
 # Feel free to import built-in libraries
@@ -29,11 +30,11 @@ class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
                 # If the robot has the ball right in front of it, go forward,
                 # rotate otherwise
                 if direction == 0:
-                    left_speed = -5
-                    right_speed = -5
+                    left_speed = 0
+                    right_speed = 0
                 else:
-                    left_speed = direction * 4
-                    right_speed = direction * -4
+                    left_speed = direction * 0
+                    right_speed = direction * 0
 
                 # Set the speed to motors
                 self.left_motor.setVelocity(left_speed)

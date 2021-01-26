@@ -18,9 +18,13 @@ import math
 
 class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
     def run(self):
+        frameCounter = -1;
         while self.robot.step(rcj_soccer_robot.TIME_STEP) != -1:
             if self.is_new_data():
                 data = self.get_new_data()
+                frameCounter += 1
+                if frameCounter % 60 == 0:
+                    print("y2:", data)
 
                 # Get the position of our robot
                 robot_pos = data[self.name]
@@ -37,11 +41,11 @@ class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
                 # If the robot has the ball right in front of it, go forward,
                 # rotate otherwise
                 if direction == 0:
-                    left_speed = -5
-                    right_speed = -5
+                    left_speed = 0
+                    right_speed = 0
                 else:
-                    left_speed = direction * 4
-                    right_speed = direction * -4
+                    left_speed = direction * 0
+                    right_speed = direction * 0
 
                 # Set the speed to motors
                 self.left_motor.setVelocity(left_speed)

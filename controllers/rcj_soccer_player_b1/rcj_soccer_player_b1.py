@@ -1,3 +1,4 @@
+team = 'BLUE'
 # rcj_soccer_player controller - ROBOT B1
 
 # Feel free to import built-in libraries
@@ -15,9 +16,9 @@ class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
                 data = self.get_new_data()
 
                 # Get the position of our robot
-                robot_pos = [data[self.name]['x'], data[self.name]['y'], data[self.name]['orientation']]
+                robot_pos = data[self.name]
                 # Get the position of the ball
-                ball_pos = [data['ball']['x'], data['ball']['y']]
+                ball_pos = data['ball']
 
                 # Get angle between the robot and the ball
                 # and between the robot and the north
