@@ -9,4 +9,16 @@ def get_direction(ball_angle: float) -> int:
     """
     if ball_angle >= 345 or ball_angle <= 15:
         return 0
-    return -1 if ball_angle < 180 else 1
+    elif ball_angle < 180:
+        return -1
+    else:
+        return 1
+def calculateGBRLine(ball_pos):
+    xCoor = ball_pos['x']
+    yCoor = ball_pos['y']
+    ballPos = [xCoor, yCoor]
+    goalPos = [-0.75, 0]
+    slopeY = ballPos[1] - goalPos[1]
+    slopeX = ballPos[0] - goalPos[0]
+    botPos = [ballPos[0] + 0.5*slopeX, ballPos[1] + 0.5*slopeY]
+    return botPos

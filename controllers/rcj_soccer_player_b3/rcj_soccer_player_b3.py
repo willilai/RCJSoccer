@@ -19,19 +19,18 @@ import math
 
 class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
     def run(self):
-        frameCounter = -1;
         while self.robot.step(rcj_soccer_robot.TIME_STEP) != -1:
             if self.is_new_data():
                 data = self.get_new_data()
-                frameCounter += 1
-                if frameCounter % 60 == 0:
-                    print("b3:", data)
 
                 # Get the position of our robot
                 robot_pos = data[self.name]
                 # Get the position of the ball
                 ball_pos = data['ball']
+                print(ball_pos)
 
+                goToPos = utils.calculateGBRLine(ball_pos)
+                print(goToPos)
                 # Get angle between the robot and the ball
                 # and between the robot and the north
                 ball_angle, robot_angle = self.get_angles(ball_pos, robot_pos)

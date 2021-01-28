@@ -24,7 +24,7 @@ class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
                 data = self.get_new_data()
                 frameCounter += 1
                 if frameCounter % 60 == 0:
-                    print("y2:", data)
+                    print("data:", data)
 
                 # Get the position of our robot
                 robot_pos = data[self.name]
