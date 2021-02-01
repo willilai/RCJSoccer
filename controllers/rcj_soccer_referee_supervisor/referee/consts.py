@@ -12,7 +12,7 @@ TIME_STEP = 64
 ROBOT_NAMES = ["B1", "B2", "B3", "Y1", "Y2", "Y3"]
 N_ROBOTS = len(ROBOT_NAMES)
 
-BALL_INITIAL_TRANSLATION = [-0.3, 0, -0.2]
+BALL_INITIAL_TRANSLATION = [0.56, 0, 0.24]
 
 CENTER_NS = "center_ns"
 YELLOW_LEFT_NS = "yellow_left_ns"
