@@ -16,9 +16,12 @@ else:
 # Feel free to import built-in libraries
 import math
 
-
 class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
     def run(self):
+        if self.name[0] == "B":
+            goalDir = -1
+        else:
+            goalDir = 1
         while self.robot.step(rcj_soccer_robot.TIME_STEP) != -1:
             if self.is_new_data():
                 data = self.get_new_data()
@@ -28,7 +31,7 @@ class MyRobot(rcj_soccer_robot.RCJSoccerRobot):
                 # Get the position of the ball
                 ball_pos = data['ball']
 
-                goToPos = utils.calculateGBRLine(ball_pos)
+                goToPos = utils.calculateGBRLine(ball_pos, goalDir)
                 # Get angle between the robot and the ball
                 # and between the robot and the north
                 ball_angle, robot_angle = self.get_angles(ball_pos, robot_pos)

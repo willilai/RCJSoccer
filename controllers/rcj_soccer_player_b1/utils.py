@@ -50,12 +50,12 @@ def calculateAngle(goToPos, robot_pos):
         robotGTPAngle -= 360
 
     return robotGTPAngle
-def calculateGBRLine(ball_pos):
+def calculateGBRLine(ball_pos, goalDir):
     xCoor = ball_pos['x']
     yCoor = ball_pos['y']
 
     ballPos = [xCoor, yCoor]
-    goalPos = [-0.75, 0]
+    goalPos = [0.75*goalDir, 0]
 
     slopeY = ballPos[1] - goalPos[1]
     slopeX = ballPos[0] - goalPos[0]
